@@ -1,0 +1,125 @@
+/* Definição de cores (Variáveis) */
+:root {
+    --bg-color: #141414;
+    --text-primary: #ffffff;
+    --text-secondary: #808080;
+    --profile-border: #ffffff;
+}
+
+/* Cores para o Modo Claro */
+body.light-mode {
+    --bg-color: #f0f0f0;
+    --text-primary: #141414;
+    --text-secondary: #555555;
+    --profile-border: #e50914; /* Vermelho Netflix para dar destaque no branco */
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botão de alternância de tema */
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Centraliza o conteúdo principal */
+main {
+    text-align: center;
+}
+
+/* Organiza os perfis lado a lado */
+.profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Espaço relativo entre os perfis */
+    margin-top: 2rem;
+    padding: 1rem;
+    list-style: none; /* Remove as bolinhas/bullets da lista */
+    padding-left: 0; /* Garante que não haja recuo lateral padrão */
+}
+
+/* Estiliza cada perfil individualmente */
+.profile {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: transform 0.2s;
+}
+
+.profile:hover {
+    color: var(--text-primary);
+    transform: scale(1.05); /* Dá um leve zoom ao passar o mouse */
+}
+
+img:hover {
+    border: 0.2rem solid var(--profile-border);
+}
+
+/* Estiliza as imagens (deixando-as quadradas e com bordas arredondadas) */
+.profile img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 0.25rem;
+    display: block;
+    margin-bottom: 0.6rem;
+    border: 0.2rem solid transparent; /* Evita que o layout "pule" no hover */
+}
+
+/* Ajusta o texto da legenda */
+figcaption {
+    font-size: 1.2rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column; /* Empilha o botão e o conteúdo principal verticalmente */
+        justify-content: flex-start; /* Alinha ao topo para não esconder o botão */
+        padding-top: 2rem;
+    }
+
+    .theme-btn {
+        position: static; /* Remove o posicionamento absoluto */
+        margin-bottom: 2rem; /* Cria espaço entre o botão e o título */
+    }
+
+    .profiles {
+        display: grid;
+        /* Define 2 colunas que variam entre 120px e 150px, mantendo-as próximas e centralizadas */
+        grid-template-columns: repeat(2, minmax(120px, 150px)); 
+        gap: 2rem 1.5rem; /* Espaço vertical e horizontal confortável */
+        justify-content: center; /* Centraliza o bloco de perfis na tela */
+        padding: 2rem 1rem;
+        margin: 0 auto;
+    }
+
+    .profile img {
+        width: 100%; /* A imagem agora obedece ao tamanho da coluna do grid */
+        height: auto;
+        aspect-ratio: 1 / 1; /* Garante que a imagem continue sempre quadrada */
+    }
+}
