@@ -31,6 +31,8 @@ O layout segue fielmente a identidade visual da Netflix, utilizando a paleta de 
 
 > **Nota:** Este projeto possui fins estritamente educacionais para estudo de desenvolvimento web front-end.
 
+<img width="800" height="363" alt="NetflixReplica-ezgif com-optimize" src="https://github.com/user-attachments/assets/b253a3f7-0753-442a-92d5-5580cc859c31" />
+
 ## 🧑‍💻 Autor
 Desenvolvido por **Leilanny Rodrigues**.
 
